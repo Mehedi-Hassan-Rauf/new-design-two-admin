@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".editable-section");
+            sections.forEach((section, index) => {
+                if (index !== 0) section.classList.add("hidden");
+            });
+
+            document.querySelectorAll(".sidebar-link").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("data-target");
+
+                    sections.forEach(section => section.classList.add("hidden"));
+                    document.getElementById(targetId).classList.remove("hidden");
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 text-white p-5 space-y-6 fixed h-full">
+            <h2 class="text-xl font-bold">Admin Panel</h2>
+            <nav class="space-y-4">
+                <a href="#" class="sidebar-link block hover:bg-gray-700 p-2 rounded" data-target="hero">Hero Section</a>
+                <a href="#" class="sidebar-link block hover:bg-gray-700 p-2 rounded" data-target="delivery">Delivery & Guarantee</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 ml-64 overflow-auto">
+            <h1 class="text-2xl font-bold mb-4">Edit Website Content</h1>
+
+            <!-- Hero Section -->
+            <div id="hero" class="editable-section max-w-[1150px] mx-auto p-6 bg-white shadow-md rounded-md mb-6">
+                <h2 class="text-2xl font-bold mb-4">Edit Hero Section</h2>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Logo Image:</label>
+                    <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                    <img class="mt-2 w-28" src="https://aronnodecors.com/wp-content/uploads/2024/12/1000002351.png" alt="Logo Preview">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Hero Title:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="অরণ্য কুরআন শরীফ রিহাল">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Subtitle:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="প্রিমিয়াম মালয়েশিয়ান ঊড ও ইটালিয়ান ল্যাকার ফিনিশিং">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Button Text:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="এখনি অর্ডার করুন">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Hero Image:</label>
+                    <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                    <img class="mt-2 w-full rounded" src="./assets/banner.jpg" alt="Hero Image Preview">
+                </div>
+
+                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700">
+                    Save Changes
+                </button>
+            </div>
+
+            <!-- Delivery & Guarantee Section -->
+            <div id="delivery" class="editable-section bg-white p-6 shadow rounded-md mb-6 hidden">
+                <h2 class="text-xl font-semibold mb-4">Edit Delivery & Guarantee</h2>
+
+                <!-- Delivery Time -->
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Delivery Time Title:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="৭-৯ কর্মদিবস">
+                </div>
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Delivery Time Description:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="পণ্য ডেলিভারি সময়">
+                </div>
+
+                <!-- Guarantee -->
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Guarantee Title:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="১০০%">
+                </div>
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Guarantee Description:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="পণ্য গ্যারান্টি">
+                </div>
+
+                <!-- Quality -->
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Product Quality Title:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="উন্নত কোয়ালিটি">
+                </div>
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Product Quality Description:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="পণ্যের গুণগত মান (কোয়ালিটি)">
+                </div>
+
+                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 mt-4">
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
