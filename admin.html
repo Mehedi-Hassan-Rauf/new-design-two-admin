@@ -33,6 +33,8 @@
             <nav class="space-y-4">
                 <a href="#" class="sidebar-link block hover:bg-gray-700 p-2 rounded" data-target="hero">Hero Section</a>
                 <a href="#" class="sidebar-link block hover:bg-gray-700 p-2 rounded" data-target="delivery">Delivery & Guarantee</a>
+                <a href="#" class="sidebar-link block hover:bg-gray-700 p-2 rounded" data-target="features">Features</a>
+                <a href="#" class="sidebar-link block hover:bg-gray-700 p-2 rounded" data-target="offer">Offer Section</a>
             </nav>
         </div>
 
@@ -110,12 +112,73 @@
                     <input type="text" class="border border-gray-300 p-2 rounded w-full" value="পণ্যের গুণগত মান (কোয়ালিটি)">
                 </div>
 
-                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 mt-4">
+                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hovaer:bg-blue-700 mt-4">
+                    Save Changes
+                </button>
+            </div>
+
+            <!-- Features Section -->
+            <div id="features" class="editable-section bg-white p-6 shadow rounded-md mb-6 hidden">
+                <h2 class="text-xl font-semibold mb-4">Edit Features Section</h2>
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Features Title:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="আমাদের রিহালে কি আছে">
+                </div>
+                <div id="features-container" class="flex flex-col items-start gap-2 mb-4">
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full mb-2" value="১. প্রিমিয়াম মালয়েশিয়ান ইঞ্জিনিয়ারিং ঊডে তৈরি">
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full mb-2" value="২. ইতালিয়ান Pu ল্যাকার ফিনিশ">
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full mb-2" value="৩. পানি, ধুলা ও তাপ প্রতিরোধী">
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full mb-2" value="৪. সৌন্দর্য ও স্থায়িত্বের মিশ্রণ">
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full mb-2" value="৫. প্রিয়জনদের জন্য একটি অর্থপূর্ণ উপহার">
+                </div>
+                <button class="bg-green-500 text-white px-4 py-2 rounded font-semibold hover:bg-green-600 mb-4" onclick="addFeature()">Add Feature</button>
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Feature Image:</label>
+                    <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                    <img class="mt-2 w-full rounded" src="./assets/img2.jpg" alt="Feature Image Preview">
+                </div>
+                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 mt-4">Save Changes</button>
+            </div>
+
+            <!-- Offer Section -->
+            <div id="offer" class="editable-section max-w-[1150px] mx-auto p-6 bg-white shadow-md rounded-md mb-6 hidden">
+                <h2 class="text-2xl font-bold mb-4">Edit Offer Section</h2>
+                
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Offer Description:</label>
+                    <textarea class="border border-gray-300 p-2 rounded w-full">কোরআন শরীফ রিহাল প্রতিটি পরিবারের জন্য মূল্যবান একটি উপহার। একটি রিহাল বছরের পর বছর কোরআন শরীফ কে সুরক্ষিত রাখবে সাথে সযত্নেও!</textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Offer Images:</label>
+                    <div class="grid grid-cols-5 max-md:grid-cols-3 max-sm:grid-cols-2 gap-2">
+                        <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                        <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                        <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                        <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                        <input type="file" class="border border-gray-300 p-2 rounded w-full">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Regular Price:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="৪৫০০">
+                </div>
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Offer Price:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="২৫০০">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block font-semibold mb-2">Order Button Text:</label>
+                    <input type="text" class="border border-gray-300 p-2 rounded w-full" value="অর্ডার করতে চাই">
+                </div>
+
+                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700">
                     Save Changes
                 </button>
             </div>
         </div>
     </div>
-
 </body>
 </html>
